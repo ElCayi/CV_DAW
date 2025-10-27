@@ -1,7 +1,7 @@
 :root{
   --ink:#111;
   --muted:#555;
-  --accent:#ffb400;
+  --accent:#ffb300dd;
   --bg:#fafafa;
   --rule:#e5e5e5;
 }
@@ -38,10 +38,10 @@ header.hero {
 header.hero::before {
   content: "";
   position: absolute;
-  top: 155px;        /* baja a mitad de la foto (350px / 2 = 175px) */
+  top: 127px;        /* baja a mitad de la foto (350px / 2 = 175px) */
   left: -28px;       /* se extiende hacia la izquierda */
   right: -28px;      /* se extiende hacia la derecha */
-  height: 60%;
+  height: 65%;
   background: #171a22;
   z-index: 0;        /* capa más inferior */
 }
@@ -54,13 +54,14 @@ header.hero > * {
 
 /* foto */
 .avatar {
-  width: 270px;
-  height: 350px;
+  width: 230px;
+  height: 335px;
   border-radius: 10px;
   object-fit: cover;
   flex: 0 0 auto;
   position: relative; /* asegura que z-index funcione */
-  z-index: 3;         /* por encima de cualquier banda oscura */
+  z-index: 3;        /* por encima de cualquier banda oscura */
+  margin-top: 20px;
 }
 
 /* Field oscuro (solo nombre+descripción) */
@@ -74,32 +75,56 @@ header.hero > * {
 
 
 .info-field h1{
-  margin:79px 0 10px;
-  font-size:55px;
+  margin:58px 0 5px;
+  font-size:50px;
   line-height:1.1;
-  font-weight:700;
+  font-weight:750;
   font-family:'Poppins', sans-serif;
   letter-spacing: 2px;  /* añado espaciado para que se note el cambio */
 }
 
 .info-field .role{
-  margin:0 0 6px;
-  color:#cfd3da;
+  margin:-8px 0 6px;
+  color:#b4b4b4;
+  font-size:22px;
 }
+
+.info-field .role strong {
+  color:#b4b4b4;
+  font-weight:700;
+}
+
+.info-field .role.right-align {
+  text-align: right;
+}
+
 .info-field .tiny{
   margin:0;
-  color:#b7bbc1;
-  font-size:12px;
+  color:#b4b4b4be;
+  font-size:18.7px;
+  line-height: 1.6;
 }
 
 /* Contacto (fuera del field) */
 .contact{
-  margin-left:0;
   text-align:right;
   font-size:12px;
   color:var(--muted);
-  flex:0 0 220px;            /* ancho fijo cómodo */
+  flex: 0 0 150px;
+  padding-top: 0;
+  padding-left: 10px;
 }
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact li {
+  margin: 0;
+}
+
 .contact a{color:inherit;text-decoration:none}
 
 /* ===== TIPOGRAFÍA GENERAL ===== */
@@ -107,9 +132,21 @@ h2{
   font-size:28px;
   letter-spacing:.3px;
   text-transform:uppercase;
-  font-weight:300;           /* light como pediste */
-  color:#444;
+  font-weight:400;           /* light como pediste */
+  color:#626262;
 }
+
+/* Clase específica para el apellido */
+.surname {
+  font-size:32px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:300;
+  color:#b4b4b4;
+  margin-top: 28px;  /* sube el apellido 3px */
+  padding-bottom: 40px;
+  border-bottom: 3px solid var(--accent);
+  line-height: 0.01;
 
 /* ===== LAYOUT CUERPO ===== */
 .grid{
