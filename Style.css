@@ -36,28 +36,62 @@ html,body{
 /* Bloque de contacto */
 .contact-top {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  padding: 12px 12px 12px 12px;
-  margin: 0 28px 0 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 45px;
+  padding: 20px 28px 20px 28px;
+  margin: 0 -28px 0 -28px;
   background: #f5f5f5;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 12px;
   text-align: center;
+  border-bottom: 2px solid var(--accent);
+  width: calc(100% + 56px);
 }
 
-.contact-top p {
+.contact-item {
   margin: 0;
   color: #333;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
 }
 
-.contact-top .material-icons {
-  font-size: 20px;
-  color: #666;
+.contact-item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+.contact-item .material-icons {
+  font-size: 25px;
+  color: currentColor;
+  flex-shrink: 0;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.contact-item span {
+  font-size: 12px;
+  word-break: break-word;
+  max-width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 1;
 }
 
 /* === FIELD OSCURO que cruza todo el header, bajo la foto y el texto === */
@@ -66,7 +100,6 @@ header.hero {
   display: flex;
   align-items: flex-start;
   gap: 0px;
-  border-bottom: 2px solid var(--accent);
   padding-bottom: 14px;
   margin-bottom: 18px;
   margin-top: 30px;
@@ -100,7 +133,7 @@ header.hero > * {
   flex: 0 0 auto;
   position: relative; /* asegura que z-index funcione */
   z-index: 3;        /* por encima de cualquier banda oscura */
-  amargin-top: 20px;
+  margin-top: 20px;
   margin-left: -28px;
   border-top: 17px solid #171a22;
   qborder-right: 5px solid #171a22;
@@ -120,7 +153,7 @@ header.hero > * {
 
 
 .info-field h1{
-  margin: 03px 0 0 0;
+  margin: 01px 4px 5px 0;
   font-size:50px;
   line-height:1.1;
   font-weight:750;
