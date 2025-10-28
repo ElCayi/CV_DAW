@@ -21,6 +21,45 @@ html,body{
   border:1px solid var(--rule);
 }
 
+/* Contenedor de nombre + contacto en la misma fila */
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.header-top h1 {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+/* Bloque de contacto */
+.contact-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 12px 12px 12px 12px;
+  margin: 0 28px 0 28px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.contact-top p {
+  margin: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.contact-top .material-icons {
+  font-size: 20px;
+  color: #666;
+}
+
 /* === FIELD OSCURO que cruza todo el header, bajo la foto y el texto === */
 header.hero {
   position: relative;          /* referencia para el fondo */
@@ -38,7 +77,7 @@ header.hero {
 header.hero::before {
   content: "";
   position: absolute;
-  top: 127px;        /* baja a mitad de la foto (350px / 2 = 175px) */
+  top: 137px;        /* baja a mitad de la foto (350px / 2 = 175px) */
   left: -28px;       /* se extiende hacia la izquierda */
   right: -28px;      /* se extiende hacia la derecha */
   height: 65%;
@@ -54,43 +93,50 @@ header.hero > * {
 
 /* foto */
 .avatar {
-  width: 230px;
-  height: 335px;
-  border-radius: 10px;
+  width: 280px;
+  height: 365px;
+  aborder-radius: 7px;
   object-fit: cover;
   flex: 0 0 auto;
   position: relative; /* asegura que z-index funcione */
   z-index: 3;        /* por encima de cualquier banda oscura */
-  margin-top: 20px;
+  amargin-top: 20px;
+  margin-left: -28px;
+  border-top: 17px solid #171a22;
+  qborder-right: 5px solid #171a22;
+  aborder-bottom: 3px solid #171a22;
+  border-left: 28px solid #171a22;
 }
 
 /* Field oscuro (solo nombre+descripción) */
 .info-field {
   position: relative;
   color: #000000;
-  padding: 15px 28px 24px 20px;
+  padding: 85px 10px 24px 20px;
   flex: 1 1 auto;
   z-index: 1; /* el texto por encima del fondo */
+  overflow: hidden;
 }
 
 
 .info-field h1{
-  margin:58px 0 5px;
+  margin: 03px 0 0 0;
   font-size:50px;
   line-height:1.1;
   font-weight:750;
   font-family:'Poppins', sans-serif;
-  letter-spacing: 2px;  /* añado espaciado para que se note el cambio */
+  letter-spacing: 2px;
+  white-space: nowrap;
 }
 
 .info-field .role{
   margin:-8px 0 6px;
-  color:#b4b4b4;
+  color:#e5e5e5;
   font-size:22px;
 }
 
 .info-field .role strong {
-  color:#b4b4b4;
+  color:#d8d8d8;
   font-weight:700;
 }
 
@@ -100,9 +146,20 @@ header.hero > * {
 
 .info-field .tiny{
   margin:0;
-  color:#b4b4b4be;
+  color:#d7d7d7be;
   font-size:18.7px;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-field .tiny i.material-icons {
+  font-size: 20px;
+}
+
+.info-field .tiny.tiny-spacing {
+  margin-bottom: 09px;
 }
 
 /* Contacto (fuera del field) */
@@ -143,10 +200,11 @@ h2{
   text-transform:uppercase;
   font-weight:300;
   color:#b4b4b4;
-  margin-top: 28px;  /* sube el apellido 3px */
+  margin-top: 20px;
   padding-bottom: 40px;
   border-bottom: 3px solid var(--accent);
   line-height: 0.01;
+}
 
 /* ===== LAYOUT CUERPO ===== */
 .grid{
