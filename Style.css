@@ -19,37 +19,37 @@ html,body{
   background:white;
   padding:28px 28px 24px;
   border:1px solid var(--rule);
+  position: relative;
 }
 
-/* Contenedor de nombre + contacto en la misma fila */
-.header-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-}
-
-.header-top h1 {
-  flex: 0 0 auto;
-  margin: 0;
+.page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 285px;
+  height: 100%;
+  background: #ffb300dd;
+  z-index: 0;
 }
 
 /* Bloque de contacto */
 .contact-top {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 45px;
-  padding: 20px 28px 20px 28px;
-  margin: 0 -28px 0 -28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 79px;
+  padding: 20px;
   background: #f5f5f5;
-  border-radius: 0;
-  font-size: 12px;
-  text-align: center;
+  border-radius: 12px;
+  font-size: 14px;
   border-bottom: 2px solid var(--accent);
-  width: calc(100% + 56px);
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-item {
-  margin: 0;
+  margin: 2px 30px 0 -57.8px;
   color: #333;
 }
 
@@ -83,17 +83,6 @@ html,body{
   transition: color 0.2s ease;
 }
 
-.contact-item span {
-  font-size: 12px;
-  word-break: break-word;
-  max-width: 100%;
-  text-align: left;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  flex-shrink: 1;
-}
-
 /* === FIELD OSCURO que cruza todo el header, bajo la foto y el texto === */
 header.hero {
   position: relative;          /* referencia para el fondo */
@@ -103,7 +92,8 @@ header.hero {
   padding-bottom: 14px;
   margin-bottom: 18px;
   margin-top: 30px;
-  overflow: visible; 
+  overflow: visible;
+  z-index: 1;
 }
 
 /* fondo oscuro que se extiende de lado a lado, detrás de todo */
@@ -126,19 +116,19 @@ header.hero > * {
 
 /* foto */
 .avatar {
-  width: 280px;
-  height: 365px;
+  width: 285px;
+  height: 375px;
   aborder-radius: 7px;
   object-fit: cover;
   flex: 0 0 auto;
   position: relative; /* asegura que z-index funcione */
   z-index: 3;        /* por encima de cualquier banda oscura */
-  margin-top: 20px;
+  margin-top: 38px;
   margin-left: -28px;
-  border-top: 17px solid #171a22;
-  qborder-right: 5px solid #171a22;
-  aborder-bottom: 3px solid #171a22;
-  border-left: 28px solid #171a22;
+  aborder-top: 17px solid #674903a3;
+  qborder-right: 15px solid #ffb300dd;
+  aborder-bottom: 25px solid #674903a3;
+  aborder-left: 28px solid #674903;
 }
 
 /* Field oscuro (solo nombre+descripción) */
@@ -244,6 +234,8 @@ h2{
   display:grid;
   grid-template-columns:1.2fr .8fr;
   gap:22px;
+  position: relative;
+  z-index: 2;
 }
 
 section{
