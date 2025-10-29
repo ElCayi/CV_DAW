@@ -36,28 +36,56 @@ html,body{
 /* Bloque de contacto */
 .contact-top {
   display: flex;
-  flex-wrap: wrap;
-  gap: 79px;
-  padding: 20px;
-  background: #f5f5f5;
-  border-radius: 12px;
+  flex-direction: column-reverse;
+  gap: 12px;
+  padding: 15px 20px;
+  border-radius: 6px;
   font-size: 14px;
-  border-bottom: 2px solid var(--accent);
-  width: 100%;
-  position: relative;
-  z-index: 1;
+  dborder-bottom: 2px solid var(--accent);
+  width: 350px;
+  position: absolute;
+  top: 20px;
+  right: -23px;
+
+  text-align: right;
+  z-index: 10;
 }
 
 .contact-item {
-  margin: 2px 30px 0 -57.8px;
+  margin: 0;
   color: #333;
+  width: 85%;
+}
+
+.contact-item:nth-child(1) a span {
+  letter-spacing: 2px;
+  font-size: 17px;
+}
+
+.contact-item:nth-child(2) a span {
+  letter-spacing: 2px;
+  font-size: 17px;
+}
+
+.contact-item:nth-child(3) a span {
+  letter-spacing: 1px;
+  font-size: 17px;
+}
+
+.contact-item:nth-child(3) {
+  margin: 0;
+}
+
+.contact-item:nth-child(4) {
+  margin: 0;
+  font-size: 15px;
 }
 
 .contact-item a {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   gap: 6px;
   color: #333;
   text-decoration: none;
@@ -73,7 +101,7 @@ html,body{
 }
 
 .contact-item .material-icons {
-  font-size: 25px;
+  font-size: 20px;
   color: currentColor;
   flex-shrink: 0;
   min-width: 20px;
@@ -89,8 +117,8 @@ header.hero {
   display: flex;
   align-items: flex-start;
   gap: 0px;
-  padding-bottom: 14px;
-  margin-bottom: 18px;
+  padding-bottom: 0;
+  margin-bottom: -4px;
   margin-top: 30px;
   overflow: visible;
   z-index: 1;
@@ -104,7 +132,7 @@ header.hero::before {
   left: -28px;       /* se extiende hacia la izquierda */
   right: -28px;      /* se extiende hacia la derecha */
   height: 65%;
-  background: #171a22;
+  background: #333;
   z-index: 0;        /* capa más inferior */
 }
 
@@ -123,7 +151,7 @@ header.hero > * {
   flex: 0 0 auto;
   position: relative; /* asegura que z-index funcione */
   z-index: 3;        /* por encima de cualquier banda oscura */
-  margin-top: 38px;
+  margin-top: 22px;
   margin-left: -28px;
   aborder-top: 17px solid #674903a3;
   qborder-right: 15px solid #ffb300dd;
@@ -221,7 +249,7 @@ h2{
   font-size:32px;
   letter-spacing:3px;
   text-transform:uppercase;
-  font-weight:300;
+  font-weight:400;
   color:#b4b4b4;
   margin-top: 20px;
   padding-bottom: 40px;
