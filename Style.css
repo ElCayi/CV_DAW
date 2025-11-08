@@ -26,10 +26,10 @@ html,body{
 .page::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 65px;
   left: 0;
   width: 285px;
-  height: 100%;
+  height: 93%;
   background: #ffb300d6;
   z-index: 0;
   box-shadow: 8px 0 15px rgba(0, 0, 0, 0.25);
@@ -309,9 +309,9 @@ section{
 
 /* Secciones dentro del sidebar amarillo */
 main > section:nth-child(2),
-main > section:nth-child(3),
-aside > section:nth-child(3),
-aside > section:nth-child(4) {
+aside > section:nth-child(1),
+aside > section:nth-child(2),
+aside > section:nth-child(3) {
   border: none;
   border-radius: 4px;
   padding: 12px;
@@ -331,23 +331,11 @@ main > section:first-child { /* Perfil profesional */
   font-size: 14px;
 }
 
-main > section:first-child::after {
-  content: "";
+main > section:nth-child(2) { /* Tecnologías */
   position: absolute;
-  width: 46px;
-  height: 6px;
-  background: #333333ab;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -05px;
-  left: 36px;
-}
-
-main > section:nth-child(2) { /* Idiomas */
-  position: absolute;
-  width: 250px;
-  left: 20px;
-  top: 315px;
+  width: 260px;
+  left: -10px;
+  top: 253px;
   z-index: 2;
 }
 
@@ -385,18 +373,19 @@ ul.clean{list-style:none;padding:0;margin:0}
 .badge{
   display:inline-block;
   padding:3px 6px;
-  border:1px solid #ccc;
+  border:1px solid #ffe263;
   border-radius:6px;
   margin:5px 5px 0 0;
   font-size:12px;
-  background: #f5f5f5;
+  background: #ffffff;
   color: #333;
   transition: all 0.2s ease;
 }
 
 .badge:hover {
-  background: #e0e0e0;
-  color: #111;
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
 }
 
 /* Variantes de badges por categoría */
@@ -468,18 +457,18 @@ ul.clean{list-style:none;padding:0;margin:0}
 }
 
 .skills-column:first-child {
-  border-right: 1px solid #e5e5e5;
-  padding-right: 4px;
+  border-right: none;
+  padding-right: 0;
 }
 
 .skills-column:last-child {
-  padding-left: 4px;
+  padding-left: 0;
 }
 
 .group-label {
   font-size: 11px;
   font-weight: 700;
-  color: #999;
+  color: #444;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -487,7 +476,7 @@ ul.clean{list-style:none;padding:0;margin:0}
 .group-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 0;
+  gap: -2px;
 }
 
 .proj {
@@ -499,7 +488,7 @@ ul.clean{list-style:none;padding:0;margin:0}
 
 .skills {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 4px;
 }
 
