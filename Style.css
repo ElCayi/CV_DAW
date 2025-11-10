@@ -372,10 +372,10 @@ ul.clean{list-style:none;padding:0;margin:0}
 
 .badge{
   display:inline-block;
-  padding:3px 6px;
+  padding:3px 7px;
   border:1px solid #ffe263;
   border-radius:6px;
-  margin:7px 5px 0 0;
+  margin:7px 2px 0 0;
   font-size:13px;
   background: #ffffff;
   color: #333;
@@ -458,6 +458,7 @@ ul.clean{list-style:none;padding:0;margin:0}
 
 .skills-group.subsection {
   margin-left: 8px;
+  margin-bottom: 19px;
   padding-bottom: 5px;
   border-left: 4px solid rgba(0, 0, 0, 0.15);
   padding-left: 6px;
@@ -472,7 +473,7 @@ ul.clean{list-style:none;padding:0;margin:0}
 }
 
 .skills-group.subsection .badge {
-  margin: 7px 6px 0 0;
+  margin: 7px 7px 0 0;
   padding: 3px 4px;
 }
 
@@ -504,10 +505,21 @@ ul.clean{list-style:none;padding:0;margin:0}
   justify-content: space-between;
 }
 
+.skills-group:not(.subsection) .group-content {
+  gap: 0px;
+}
+
+.skills-group:not(.subsection) .badge {
+  margin: 7px 9px 0 0;
+}
+
 .languages-text {
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
   line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: 0.15em;
 }
 
 .languages-text p {
