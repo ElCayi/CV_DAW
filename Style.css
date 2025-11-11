@@ -322,20 +322,20 @@ main > section:first-child { /* Perfil profesional */
   position: absolute;
   width: 247px;
   left: -10px;
-  top: -10px;
+  top: 0px;
   z-index: 2;
   background: transparent;
   border: none;
   padding: 0;
   border-bottom: none;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 main > section:nth-child(2) { /* Tecnologías */
   position: absolute;
   width: 259px;
   left: -10px;
-  top: 253px;
+  top: 266px;
   z-index: 2;
 }
 
@@ -351,8 +351,8 @@ aside > section:nth-child(3) {
   margin-bottom: 20px;
 }
 
-aside > section:nth-child(4) {
-  margin-bottom: 20px;
+aside > section:nth-child(4) { /* Idiomas */
+  margin-bottom: 10px;
 }
 
 ul.clean{list-style:none;padding:0;margin:0}
@@ -375,7 +375,7 @@ ul.clean{list-style:none;padding:0;margin:0}
   padding:3px 7px;
   border:1px solid #ffe263;
   border-radius:6px;
-  margin:7px 2px 0 0;
+  margin:7px 2px 0 0; /* margen derecho para separar badges */
   font-size:13px;
   background: #ffffff;
   color: #333;
@@ -454,10 +454,11 @@ ul.clean{list-style:none;padding:0;margin:0}
 
 .skills-group:last-child {
   border-bottom: none;
+  margin-top: 4px;
 }
 
 .skills-group.subsection {
-  margin-left: 8px;
+  margin-left: 11px;
   margin-bottom: 19px;
   padding-bottom: 5px;
   border-left: 4px solid rgba(0, 0, 0, 0.15);
@@ -474,7 +475,7 @@ ul.clean{list-style:none;padding:0;margin:0}
 
 .skills-group.subsection .badge {
   margin: 7px 7px 0 0;
-  padding: 3px 4px;
+  padding: 2px 3px;
 }
 
 .skills-column:first-child {
