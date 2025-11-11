@@ -27,7 +27,7 @@ html,body{
   content: "";
   position: absolute;
   top: 65px;
-  left: 0;
+  left: 7px;
   width: 285px;
   height: 93%;
   background: #ffb300d6;
@@ -50,6 +50,7 @@ html,body{
   right: -23px;
   text-align: left;
   z-index: 10;
+  transform: translateX(7px);
 }
 
 .contact-item {
@@ -122,6 +123,7 @@ header.hero {
   margin-top: 0px;
   overflow: visible;
   z-index: 0;
+  transform: translateX(7px);
 }
 
 /* fondo oscuro que se extiende de lado a lado, detrás de todo */
@@ -130,7 +132,7 @@ header.hero::before {
   position: absolute;
   top: 144px;        /* baja a mitad de la foto (350px / 2 = 175px) */
   left: -28px;       /* se extiende hacia la izquierda */
-  right: -28px;      /* se extiende hacia la derecha */
+  right: -21px;      /* se extiende hacia la derecha */
   height: 63%;
   background: #333;
   z-index: 1;        /* capa más inferior */
@@ -281,6 +283,7 @@ main > section:first-child h2 {
   gap:20px;
   position: relative;
   z-index: 2;
+  transform: translateX(7px);
 }
 
 aside {
