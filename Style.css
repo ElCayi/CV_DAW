@@ -46,7 +46,7 @@ html,body{
   dborder-bottom: 2px solid var(--accent);
   width: 350px;
   position: absolute;
-  top: 23px;
+  top: 25px;
   right: -23px;
   text-align: left;
   z-index: 10;
