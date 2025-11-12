@@ -313,7 +313,7 @@ aside > section:nth-child(3) {
 main > section:first-child { /* Perfil profesional */
   position: absolute;
   width: 249.5px;
-  right: 490px;
+  right: 496.7px;
   top: 4px;
   z-index: 2;
   background: transparent;
@@ -326,7 +326,7 @@ main > section:first-child { /* Perfil profesional */
 main > section:nth-child(2) { /* Tecnologías */
   position: absolute;
   width: 259px;
-  right: 480px;
+  right: 486.7px;
   top: 251px;
   z-index: 2;
 }
@@ -389,9 +389,9 @@ aside > section:nth-child(2) .item > div:last-child {
   padding:3px 7px;
   border:1px solid #ffe263;
   border-radius:6px;
-  margin:7px 2px 0 0; /* margen derecho para separar badges */
+  margin:10px 6px 4px 0; /* margen derecho para separar badges */
   font-size:13px;
-  background: #ffffff;
+  background: #ffffff;  
   color: #333;
   transition: all 0.2s ease;
 }
@@ -488,7 +488,7 @@ aside > section:nth-child(2) .item > div:last-child {
 }
 
 .skills-group.subsection .badge {
-  margin: 7px 7px 0 0;
+  margin: 8px 8px 0 0;
   padding: 2px 3px;
 }
 
