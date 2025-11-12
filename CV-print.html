@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CV – Prácticas FCT DAW</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    :root{
+      --ink:#111;
+      --muted:#555;
+      --accent:#ffb711dd;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      color:var(--ink);
+      font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+    }
+
+    .page{
+      max-width:794px;
+      height: 1123px;
+      margin:0 auto;
+      background:white;
+      padding:16px 28px 24px;
+      position: relative;
+    }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 285px;
+      height: 93%;
+      background: #ffb300d6;
+      z-index: 0;
+      box-shadow: 8px 0 15px rgba(0, 0, 0, 0.25);
+    }
+
+    header.hero {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 0px;
+      padding-bottom: 0;
+      margin-bottom: -4px;
+      margin-top: 0px;
+      overflow: visible;
+      z-index: 0;
+    }
+
+    header.hero::before {
+      content: "";
+      position: absolute;
+      top: 144px;
+      left: -28px;
+      right: -28px;
+      height: 63%;
+      background: #333;
+      z-index: 1;
+    }
+
+    header.hero > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar {
+      width: 285px;
+      height: 375px;
+      object-fit: cover;
+      flex: 0 0 auto;
+      position: relative;
+      z-index: 3;
+      margin-top: 14px;
+      margin-left: -28px;
+    }
+
+    .info-field {
+      position: relative;
+      color: #000000;
+      padding: 90px 10px 24px 20px;
+      flex: 1 1 auto;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .info-field::after {
+      content: "";
+      position: absolute;
+      width: 442px;
+      height: 3px;
+      background: var(--accent);
+      left: 20px;
+      top: 198px;
+    }
+
+    .info-field h1{
+      margin: -1px 4px 5px 0;
+      font-size:50px;
+      line-height:1.1;
+      font-weight:750;
+      font-family:'Poppins', sans-serif;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .info-field .role{
+      margin:-8px 0 6px;
+      color:#e5e5e5;
+      font-size:22px;
+    }
+
+    .info-field .role strong {
+      color:#d8d8d8;
+      font-weight:700;
+    }
+
+    .info-field .role.right-align {
+      text-align: right;
+    }
+
+    .info-field .tiny{
+      margin:0;
+      color:#d7d7d7be;
+      font-size:18.7px;
+      line-height: 1.6;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .info-field .tiny i.material-icons {
+      font-size: 18px;
+    }
+
+    .contact-top {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 18px;
+      padding: 5px 20px;
+      border-radius: 6px;
+      font-size: 10px;
+      width: 350px;
+      position: absolute;
+      top: 23px;
+      right: -23px;
+      text-align: left;
+      z-index: 10;
+    }
+
+    .contact-item {
+      margin: 0;
+      color: #333;
+      width: 85%;
+    }
+
+    .contact-item a {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px;
+      color: #333;
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
+    .contact-item a span {
+      font-size: 13px;
+    }
+
+    .contact-item .material-icons {
+      font-size: 16px;
+      color: currentColor;
+      flex-shrink: 0;
+      min-width: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2{
+      font-size:18px;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      font-weight:600;
+      color:#333;
+      padding: 8px 0px;
+      margin: 0 0 6px 0;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    aside {
+      margin-left: -100px;
+      margin-top: 13px;
+      margin-right: 1px;
+    }
+
+    section{
+      padding-bottom:8px;
+    }
+
+    main > section:nth-child(2),
+    main > section:nth-child(3) {
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      margin-right: 10px;
+    }
+
+    aside > section:nth-child(1),
+    aside > section:nth-child(2),
+    aside > section:nth-child(3) {
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      border-bottom: none;
+    }
+
+    main > section:first-child {
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+
+    main > section:nth-child(2) {
+      margin-right: 10px;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+    }
+
+    main > section:nth-child(3) {
+      margin-right: 10px;
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+    }
+
+    aside > section:nth-child(1),
+    aside > section:nth-child(2),
+    aside > section:nth-child(3) {
+      border: none;
+      border-radius: 4px;
+      padding: 12px;
+      border-bottom: none;
+    }
+
+    .item{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:2px;
+      margin-bottom:10px;
+      background: #f3f3f3b4;
+      padding: 8px 10px;
+      border-radius: 4px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .when{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:600;
+      margin-bottom: 3px;
+    }
+
+    ul.clean{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .badge{
+      display:inline-block;
+      padding:3px 7px;
+      border:1px solid #ffe263;
+      border-radius:6px;
+      margin:7px 2px 0 0;
+      font-size:13px;
+      background: #ffffff;
+      color: #333;
+    }
+
+    .skills-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding-bottom: 14px;
+    }
+
+    .skills-group.subsection {
+      margin-left: 11px;
+      margin-bottom: 19px;
+      padding-bottom: 5px;
+      border-left: 4px solid rgba(0, 0, 0, 0.15);
+      padding-left: 6px;
+    }
+
+    .skills-group.subsection .group-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: -7px;
+    }
+
+    .skills-group.subsection .badge {
+      margin: 7px 7px 0 0;
+      padding: 2px 3px;
+    }
+
+    .group-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #444;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 2px;
+      margin-bottom: 0px;
+      margin-right: 10px;
+    }
+
+    .group-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0px;
+      justify-content: space-between;
+    }
+
+    .skills-group:not(.subsection) .badge {
+      margin: 7px 9px 0 0;
+    }
+
+    .languages-text {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.6;
+      text-align: justify;
+      hyphens: auto;
+      word-spacing: 0.15em;
+    }
+
+    .languages-text p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    .surname {
+      font-size:32px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-weight:400;
+      color:#b4b4b4;
+      margin-top: 20px;
+      padding-bottom: 40px;
+      line-height: 0.01;
+    }
+
+    .tiny-icon {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+ <header class="hero">
+  <img class="avatar" src="img/foto.png" alt="Foto">
+
+  <div class="info-field">
+      <h1>Claudia</h1>
+    
+    <h2 class="surname">RODRÍGUEZ MAYÁN</h2> 
+    <p class="role">Estudiante de Desarrollo de Aplicaciones Web </p>
+    <p class="tiny tiny-spacing">Disponibilidad inmediata · Presencial/Híbrido/Remoto</p>
+    <p class="tiny"><i class="material-icons tiny-icon">location_on</i>Santiago de Compostela, Galicia</p>
+    <br>
+    <p class="role right-align"><strong>— Busco prácticas FCT</strong></p>
+  </div>
+
+  
+</header>
+
+<div class="contact-top">
+  <div class="contact-item">
+    <a href="https://github.com/ElCayi" target="_blank">
+      <i class="material-icons">github</i>
+      <span>GitHub</span>
+    </a>
+  </div>
+  <div class="contact-item">
+    <a href="https://www.linkedin.com/in/cayi/" target="_blank">
+      <i class="material-icons">work</i>
+      <span>LinkedIn</span>
+    </a>
+  </div>
+  <div class="contact-item">
+    <a href="tel:+34651310998">
+      <i class="material-icons">phone</i>
+      <span>+34 651 310 998</span>
+    </a>
+  </div>
+  <div class="contact-item">
+    <a href="mailto:claudia.rmayan@gmail.com">
+      <i class="material-icons">email</i>
+      <span>claudia.rmayan@gmail.com</span>
+    </a>
+  </div>
+</div>
+
+
+  <div class="grid">
+    <main>
+      <section>
+        <h2></h2>
+        <div class="summary">
+          <strong>R</strong>esolutiva y curiosa, con base en frontend 
+          y fundamentos de backend. Me destaco por mi autonomía, enfoque analítico 
+          y por integrar IA y automatización en mi trabajo, usando herramientas como Copilot. 
+          Interesada en entornos modernos y buenas prácticas de desarrollo.
+      </section>
+
+      <section>
+        <div class="skills">
+          <div class="skills-group">
+            <div class="group-label">Tecnologías</div>
+            <div class="group-content">
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">Linux</span>
+              <span class="badge">Angular</span>
+              <span class="badge">Figma</span>
+              <span class="badge">Java</span>
+              <span class="badge">Python</span>
+              <span class="badge">SQL</span>
+              <span class="badge">MongoDB</span>
+              <span class="badge">Apache</span>
+              <span class="badge">VS Code</span>
+              <span class="badge">JavaScript</span>
+              <span class="badge">Git/GitHub</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">Spring Boot</span>
+            </div>
+          </div>
+          <div class="skills-group subsection">
+            <div class="group-label">Extra:</div>
+            <div class="group-content">
+              <span class="badge">APIs REST</span>
+              <span class="badge">TradingView</span>
+              <span class="badge">Adobe</span>
+              <span class="badge">QuantConnect</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <div class="group-label">Idiomas</div>
+            <div class="languages-text">
+              <p>Galego (Nativo) · Español (Nativo) </p><p>Inglés (B1)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Formación</h2>
+        <div class="item">
+          <div class="when">2025</div>
+          <div><strong>CFGS Desarrollo de Aplicaciones Web</strong> — UNIR FP </div>
+        </div>
+        <div class="item">
+          <div class="when">2024</div>
+          <div><strong>Introducción al Desarrollo de Videojuegos</strong> — INCYDE</div>
+        </div>
+        <div class="item">
+          <div class="when">2023</div>
+          <div><strong>Digital Painting in Photoshop</strong> — Aaron Blaise</div>
+        </div>
+        <div class="item">
+          <div class="when">2014</div>
+          <div>Bachillerato · CELGA 4</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experiencia</h2>
+        <ul class="clean">
+          <li class="item">
+            <div class="when">2017–actual</div>
+            <div><strong>Freelance / Proyectos personales</strong> — Diseño y programación de sistemas algorítmicos de trading, integración de APIs (QuantConnect, TradingView) y automatización de flujos financieros.</div>
+          </li>
+          <li class="item">
+            <div class="when">2020–2022</div>
+            <div><strong>Nebius Games</strong> (online) — Diseño gráfico y arte conceptual 2D para proyecto independiente de videojuegos.</div>
+          </li>
+          <li class="item">
+            <div class="when">2020</div>
+            <div><strong>TamerinTECH</strong> (Múnich, Alemania) — Diseño de la interfaz de la app (UI) y materiales publicitarios.</div>
+          </li>
+          <li class="item">
+            <div class="when">2017–2022</div>
+            <div><strong>BSDanza / Jugger Compostela / Ocionautas</strong> — Diseño publicitario e identidad visual para eventos y asociaciones.</div>
+          </li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <p class="tiny"></p>
+</div>
+</body>
+</html>

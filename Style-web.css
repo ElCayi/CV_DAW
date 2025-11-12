@@ -1,0 +1,653 @@
+:root{
+  --ink:#111;
+  --muted:#555;
+  --accent:#ffb711dd;
+  --bg:#fafafa;
+  --rule:#e5e5e5;
+}
+
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  color:var(--ink);
+  font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial;
+}
+
+.page{ /* contenedor principal */
+  max-width:794px;
+  height: 1123px;
+  margin:24px auto;
+  background:white;
+  padding:16px 28px 24px;
+  border:1px solid var(--rule);
+  position: relative;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  top: 65px;
+  left: 7px;
+  width: 285px;
+  height: 1043px; /* 93% */
+  background: #ffb300d6;
+  z-index: 0;
+  box-shadow: 8px 0 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Bloque de contacto */
+.contact-top {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 12px;
+  padding: 5px 20px;
+  border-radius: 6px;
+  font-size: 10px;
+  dborder-bottom: 2px solid var(--accent);
+  width: 350px;
+  position: absolute;
+  top: 25px;
+  right: -23px;
+  text-align: left;
+  z-index: 10;
+  transform: translateX(7px);
+}
+
+.contact-item {
+  margin: 0;
+  color: #333;
+  width: 263px; /* 85% */
+}
+
+.contact-item:nth-child(1) a span {
+  letter-spacing: 2px;
+  font-size: 13px;
+  margin-right: -48px;
+}
+
+.contact-item:nth-child(2) a span {
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.contact-item:nth-child(3) a span {
+  letter-spacing: 1px;
+  font-size: 13px;
+  margin-left: -2px;
+}
+
+.contact-item:nth-child(4) {
+  font-size: 13px;
+  margin-left: -2px;
+  padding-bottom: -4px;
+}
+
+.contact-item a {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
+}
+
+.contact-item .material-icons {
+  font-size: 16px;
+  color: currentColor;
+  flex-shrink: 0;
+  min-width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+/* === FIELD OSCURO que cruza todo el header, bajo la foto y el texto === */
+header.hero {
+  position: relative;          /* referencia para el fondo */
+  display: flex;
+  align-items: flex-start;
+  gap: 0px;
+  padding-bottom: 0;
+  margin-bottom: -4px;
+  margin-top: 0px;
+  overflow: visible;
+  z-index: 0;
+  transform: translateX(7px);
+}
+
+/* fondo oscuro que se extiende de lado a lado, detrás de todo */
+header.hero::before {
+  content: "";
+  position: absolute;
+  top: 144px;        /* baja a mitad de la foto (350px / 2 = 175px) */
+  left: -28px;       /* se extiende hacia la izquierda */
+  right: -21px;      /* se extiende hacia la derecha */
+  height: 245px; /* 63% */
+  background: #333;
+  z-index: 1;        /* capa más inferior */
+}
+
+/* fuerza a que todo el contenido (foto, texto, contacto) esté por encima */
+header.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* foto */
+.avatar {
+  width: 285px;
+  height: 375px;
+  aborder-radius: 7px;
+  object-fit: cover;
+  flex: 0 0 auto;
+  position: relative; /* asegura que z-index funcione */
+  z-index: 3;        /* por encima de cualquier banda oscura */
+  margin-top: 14px;
+  margin-left: -28px;
+  aborder-top: 17px solid #674903a3;
+  qborder-right: 15px solid #ffb300dd;
+  aborder-bottom: 25px solid #674903a3;
+  aborder-left: 28px solid #674903;
+}
+
+/* Field oscuro (solo nombre+descripción) */
+.info-field {
+  position: relative;
+  color: #000000;
+  padding: 90px 10px 24px 20px; /* espacio interno */
+  flex: 1 1 auto;
+  z-index: 1; /* el texto por encima del fondo */
+  overflow: hidden;
+}
+
+.info-field::after {
+  content: "";
+  position: absolute;
+  width: 442px;
+  height: 3px;
+  background: var(--accent);
+  left: 20px;
+  top: 198px;
+}
+
+
+.info-field h1{
+  margin: -1px 4px 5px 0;
+  font-size:50px;
+  line-height:1.1;
+  font-weight:750;
+  font-family:'Poppins', sans-serif;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.info-field .role{
+  margin:-8px 0 6px;
+  color:#e5e5e5;
+  font-size:22px;
+}
+
+.info-field .role strong {
+  color:#d8d8d8;
+  font-weight:700;
+}
+
+.info-field .role.right-align {
+  text-align: right;
+}
+
+.info-field .tiny{
+  margin:0;
+  color:#d7d7d7be;
+  font-size:18.7px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-field .tiny i.material-icons {
+  font-size: 18px;
+}
+
+.info-field .tiny.tiny-spacing {
+  margin-bottom: 09px;
+}
+
+/* Contacto (fuera del field) */
+.contact{
+  text-align:right;
+  font-size:12px;
+  color:var(--muted);
+  flex: 0 0 150px;
+  padding-top: 0;
+  padding-left: 10px;
+}
+
+.contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact li {
+  margin: 0;
+}
+
+.contact a{color:inherit;text-decoration:none}
+
+/* ===== TIPOGRAFÍA GENERAL ===== */
+h2{
+  font-size:18px;
+  letter-spacing:.3px;
+  text-transform:uppercase;
+  font-weight:600;
+  color:#333;
+  padding: 8px 0px;
+  background: none;
+  margin: 0 0 6px 0;
+}
+
+main > section:first-child h2 {
+  background: none;
+}
+
+/* Clase específica para el apellido */
+.surname {
+  font-size:32px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:400;
+  color:#b4b4b4;
+  margin-top: 20px;
+  padding-bottom: 40px;
+  line-height: 0.01;
+  background: none;
+}
+
+/* ===== LAYOUT CUERPO ===== */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+  position: relative;
+  z-index: 2;
+  transform: translateX(7px);
+}
+
+aside {
+  margin-left: -100px;
+  margin-top: 13px;
+  margin-right: 1px;
+}
+
+.grid::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: transparent;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+section{
+  padding-bottom:8px;
+  border-bottom:none;
+}
+
+/* Secciones dentro del sidebar amarillo */
+main > section:nth-child(2),
+aside > section:nth-child(1),
+aside > section:nth-child(2),
+aside > section:nth-child(3) {
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  border-bottom: none;
+}
+
+main > section:first-child { /* Perfil profesional */
+  position: absolute;
+  width: 247px;
+  left: -10px;
+  top: 0px;
+  z-index: 2;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-bottom: none;
+  font-size: 15px;
+}
+
+main > section:nth-child(2) { /* Tecnologías */
+  position: absolute;
+  width: 259px;
+  left: -10px;
+  top: 266px;
+  z-index: 2;
+}
+
+main > section:nth-child(3) { /* Experiencia */
+  position: absolute;
+  width: 250px;
+  left: 20px;
+  top: 625px;
+  z-index: 2;
+}
+
+aside > section:nth-child(2) {
+  margin-top: -12px;
+}
+
+aside > section:nth-child(3) {
+  margin-bottom: 20px;
+}
+
+aside > section:nth-child(4) { /* Idiomas */
+  margin-bottom: 10px;
+}
+
+ul.clean{list-style:none;padding:0;margin:0}
+
+.item{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:8px;
+  margin-bottom:10px;
+  background: #f3f3f3b4;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Experiencia con años en columna */
+aside > section:nth-child(2) .item {
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+aside > section:nth-child(2) .when {
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+aside > section:nth-child(2) .item > div:last-child {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.when{font-size:12px;color:var(--muted);font-weight:600}
+
+.badge{
+  display:inline-block;
+  padding:3px 7px;
+  border:1px solid #ffe263;
+  border-radius:6px;
+  margin:7px 2px 0 0; /* margen derecho para separar badges */
+  font-size:13px;
+  background: #ffffff;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.badge:hover {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+/* Variantes de badges por categoría */
+.badge-frontend {
+  border-color: #ccc;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.badge-frontend:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+.badge-backend {
+  border-color: #ccc;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.badge-backend:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+.badge-tools {
+  border-color: #ccc;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.badge-tools:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+.badge-art {
+  border-color: #ccc;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.badge-art:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+.badge-extra {
+  border-color: #ccc;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.badge-extra:hover {
+  background: #e0e0e0;
+  color: #111;
+}
+
+.skills-group {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-bottom: 14px;
+  border-bottom: none;
+}
+
+.skills-group:last-child {
+  border-bottom: none;
+  margin-top: 4px;
+}
+
+.skills-group.subsection {
+  margin-left: 11px;
+  margin-bottom: 19px;
+  padding-bottom: 5px;
+  border-left: 4px solid rgba(0, 0, 0, 0.15);
+  padding-left: 6px;
+}
+
+.skills-group.subsection .group-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #555;
+  border-bottom: none;
+  margin-bottom: -7px;
+}
+
+.skills-group.subsection .badge {
+  margin: 7px 7px 0 0;
+  padding: 2px 3px;
+}
+
+.skills-column:first-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.skills-column:last-child {
+  padding-left: 0;
+}
+
+.group-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+.group-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px;
+  justify-content: space-between;
+}
+
+.skills-group:not(.subsection) .group-content {
+  gap: 0px;
+}
+
+.skills-group:not(.subsection) .badge {
+  margin: 7px 9px 0 0;
+}
+
+.languages-text {
+  font-size: 13px;
+  color: #333;
+  line-height: 1.6;
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: 0.15em;
+}
+
+.languages-text p {
+  margin: 0;
+  padding: 0;
+}
+
+.proj {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.summary{
+  background: transparent;
+  padding: 12px;
+  border-radius: 6px;
+  line-height: 1.6;
+  color: #444;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.half-underline {
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) 50%, transparent 50%, transparent 100%);
+  background-position: 0 100%;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+}
+
+.proj a{
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px dotted var(--accent);
+}
+
+.tiny{font-size:12px;color:var(--muted)}
+
+/* ===== IMPRESIÓN ===== */
+@media print{
+  body{
+    background:white;
+    margin: 0;
+    padding: 0;
+  }
+  .page{
+    border:none;
+    margin:0;
+    padding:16px 28px 24px;
+    max-width: 794px;
+    height: 1123px;
+    box-shadow: none;
+  }
+  
+  /* Desactivar transforms en impresión */
+  header.hero {
+    transform: none !important;
+  }
+  .contact-top {
+    transform: none !important;
+  }
+  .grid {
+    transform: none !important;
+  }
+  
+  /* Ajustar sidebar para impresión */
+  .page::before {
+    left: 0 !important;
+  }
+  
+  /* Ajustar el fondo gris del header */
+  header.hero::before {
+    left: -28px !important;
+    right: -28px !important;
+    height: 245px; /*55% !important;
+  }
+  
+  /* Ajustar la foto */
+  .avatar {
+    width: 285px !important;
+    height: 375px !important;
+    object-fit: cover !important;
+    margin-left: -28px !important;
+    margin-top: 14px !important;
+  }
+  
+  a{color:inherit;text-decoration:none}
+  header{page-break-inside:avoid}
+  section{page-break-inside:avoid}
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
