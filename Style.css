@@ -18,7 +18,7 @@ html,body{
   height: 1123px;
   margin:24px auto;
   background:white;
-  padding:16px 28px 24px;
+  padding:16px 22px 24px;
   border:1px solid var(--rule);
   position: relative;
 }
@@ -126,7 +126,7 @@ header.hero::before {
   left: 0;           /* sin negativos */
   right: 0;          /* sin negativos */
   height: 245px;
-  width: 758px;
+  width: 754px;
   background: #333;
   z-index: 1;        /* capa más inferior */
 }
@@ -151,14 +151,14 @@ header.hero > * {
   flex-shrink: 0;      /* no se encoja */
 }
 
-/* Field oscuro (solo nombre+descripción) */
+/* Field oscuro (solo nombre+descripción) */ /*Claudia y todo lo demás*/
 .info-field {
   position: absolute;
   color: #000000;
   padding: 90px 0px 13px 0px;
   flex: 0 0 450px;
   width: 450px;
-  left: -06.4px;
+  left: 11px;
   margin-right: 83px;
   top: 0;
   z-index: 10;
@@ -177,7 +177,7 @@ header.hero > * {
 
 
 .info-field h1{
-  margin: 0px 4px 5px 0;
+  margin: -1px 0px 0px 0;
   font-size:50px;
   line-height:1.1;
   font-weight:750;
@@ -190,6 +190,7 @@ header.hero > * {
   margin:0px 0 6px 0px;
   color:#e5e5e5;
   font-size:22px;
+  margin-bottom: 0px;
 }
 
 .info-field .role strong {
@@ -199,6 +200,7 @@ header.hero > * {
 
 .info-field .role.right-align {
   text-align: right;
+  top:-10px;
 }
 
 .info-field .tiny{
@@ -209,6 +211,7 @@ header.hero > * {
   display: flex;
   align-items: center;
   gap: 6px;
+  
 }
 
 .info-field .tiny i.material-icons {
@@ -257,7 +260,7 @@ main > section:first-child h2 {
   background: none;
 }
 
-/* Clase específica para el apellido */
+/* Clase específica para el apellido */ /* Rodríguez */
 .surname {
   font-size:32px;
   letter-spacing:3px;
@@ -292,7 +295,7 @@ section{
   border-bottom:none;
 }
 
-/* Secciones dentro del sidebar amarillo */
+/* Secciones dentro del sidebar amarillo */ /* FORMACION, OTROS */
 main > section:nth-child(2),
 aside > section:nth-child(1),
 aside > section:nth-child(2),
@@ -301,13 +304,15 @@ aside > section:nth-child(3) {
   border-radius: 4px;
   padding: 12px;
   border-bottom: none;
+  margin-top:20px;
+  margin-left:9px;
 }
 
 main > section:first-child { /* Perfil profesional */
   position: absolute;
   width: 249.5px;
   right: 490px;
-  top: -20px;
+  top: 4px;
   z-index: 2;
   background: transparent;
   border: none;
@@ -352,7 +357,7 @@ ul.clean{list-style:none;padding:0;margin:0}
   gap:8px;
   margin-bottom:10px;
   background: #f3f3f3b4;
-  padding: 8px 10px;
+  padding: 8px 11px;
   border-radius: 4px;
   border-left: 3px solid var(--accent);
 }
@@ -579,8 +584,7 @@ aside > section:nth-child(2) .item > div:last-child {
   .page{
     border:none;
     margin:0;
-    padding:16px 28px 24px;
-    max-width: 794px;
+    max-width: 900px;
     height: 1123px;
     box-shadow: none;
   }
