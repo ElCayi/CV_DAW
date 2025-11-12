@@ -46,7 +46,7 @@ html,body{
   width: 350px;
   position: absolute;
   top: 25px;
-  left: 475px;
+  left: 481.7px;
   text-align: left;
   z-index: 10;
 }
@@ -118,7 +118,7 @@ header.hero {
   /* transform: translateX(7px); -- REMOVIDO para PDF */
 }
 
-/* fondo oscuro que se extiende de lado a lado, detrás de todo */
+/* fondo oscuro que se extiende de lado a lado, detrás de todo */ /*recuadro gris*/
 header.hero::before {
   content: "";
   position: absolute;
@@ -126,7 +126,7 @@ header.hero::before {
   left: 0;           /* sin negativos */
   right: 0;          /* sin negativos */
   height: 245px;
-  width: 754px;
+  width: 761px;
   background: #333;
   z-index: 1;        /* capa más inferior */
 }
@@ -147,6 +147,7 @@ header.hero > * {
   position: absolute;  /* posicionamiento absoluto */
   right: 28px;         /* distancia desde la derecha */
   top: 15px;           /* distancia desde arriba */
+  left: -22px;
   z-index: 3;          /* por encima de cualquier banda oscura */
   flex-shrink: 0;      /* no se encoja */
 }
@@ -158,7 +159,7 @@ header.hero > * {
   padding: 90px 0px 13px 0px;
   flex: 0 0 450px;
   width: 450px;
-  left: 11px;
+  left: 5.7px;
   margin-right: 83px;
   top: 0;
   z-index: 10;
@@ -295,7 +296,7 @@ section{
   border-bottom:none;
 }
 
-/* Secciones dentro del sidebar amarillo */ /* FORMACION, OTROS */
+/* Secciones dentro del sidebar amarillo */ /* Formación, OTROS */
 main > section:nth-child(2),
 aside > section:nth-child(1),
 aside > section:nth-child(2),
@@ -305,7 +306,8 @@ aside > section:nth-child(3) {
   padding: 12px;
   border-bottom: none;
   margin-top:20px;
-  margin-left:9px;
+  margin-left:258px;
+  width: 468px;
 }
 
 main > section:first-child { /* Perfil profesional */
